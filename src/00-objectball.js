@@ -120,14 +120,13 @@ function homeTeamName() {
         const playerObj = teamObj.players
         for (const playerKey in playerObj) {
             if (playerKey === pName) {
-                return playerObj[playerKey].shoe
-                
+                return playerObj[playerKey].shoe                
             }
         }
     }
 }
 
-function teamColors(nameOfTeam){
+    function teamColors(nameOfTeam){
         const game = gameObject()
         for (const gameKey in game){
                 const teamHomeAway = game[gameKey]
@@ -139,24 +138,68 @@ function teamColors(nameOfTeam){
         }
     }
 
-    // function playNumbers(nameOfTeam){
-    //     const game = gameObject()
-    //     for (const gameKey in game){
-    //             const teamHomeAway = game[gameKey]
-    //                 const theTeamName = teamHomeAway.teamName
-    //                 const theTeamPlayers = teamHomeAway.players
-    //                 if(nameOfTeam === theTeamName){
-                        
-    //                  for(const item in theTeamPlayers){
-    //                     let myArray = []
-    //                     myArray.push(theTeamPlayers[item].number)
-    //                     console.log(myArray)
-    //                     }
-    //                 }
-    //             }
-    //         }
+            const teamNames = () => {
+                const game = gameObject();
+                const colors = [];
+                for(const gameKey in game ){
+                    const teamObj = game[gameKey];
+                    const teamName = teamObj.teamName;
+                    colors.push(`The team name is ${teamName}`)
+                }
+                return colors
+              }
+              teamNames();
+
+              const playerNumbers = (name) => {
+                const game = gameObject();
+                const teamPlayerNumbers = [];
+                for(const gameKey in game ){
+                    const teamObj = game[gameKey];
+                    const teamName = teamObj.teamName;
+                    const data = teamObj.players;
+                    if(teamName === name){
+                      for(const key in data){
+                          const number = data[key].number;
+                        teamPlayerNumbers.push(`${number}`)
+                      }
+                    }
+                }
+                return `The jersey numbers for ${name} are [${teamPlayerNumbers}]`;
+              }
+              playerNumbers();
+
+              const playerStats = (names) => {
+                const game = gameObject();
+                for(const gameKey in game ){
+                    const teamObj = game[gameKey];
+                    const data = teamObj.players;
+                    for(const key in data){
+                        const player = key;
+                        if( player === names){
+                          return data[key]
+                        }
+                    }
+                }
+              }
+              playerStats();
+
+            const bigShoeRebounds = () => {
+                const game = gameObject();
+                for(const gameKey in game){
+                    const teamObj = game[gameKey];
+                    const data = teamObj.players;
+                    
+                    for(const key in data){
+                        console.log(data[key])
+                        const player = key;
+                        const shoeSize = data[key].shoe;           
+                    }
+                }
+              }
+              
+              bigShoeRebounds()
 
 console.log(numPointsScored("DeSagna Diop"));
 console.log(shoeSize("Jeff Adrien"))
 console.log(teamColors("Brooklyn Nets"))
-// console.log(playNumbers("Charlotte Hornets"))
+console.log(playNumbers("Charlotte Hornets"))
