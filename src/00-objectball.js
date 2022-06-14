@@ -1,205 +1,319 @@
-function gameObject(){
-    let game = {
-        home:{
-            teamName:"Brooklyn Nets",
-            colors: "Black, White",
-            players:{
-                "Alan Anderson":{
-                    "Number": 0,
-                    "shoe":10,
-                    "points":22,
-                    "rebounds":12,
-                    "Assists":12,
-                    "steals":3,
-                    "blocks":1,
-                    "slam Dunks":1
-                },
-                "Reggie Evans":{
-                    "Number": 30,
-                    "shoe":10,
-                    "points":22,
-                    "rebounds":12,
-                    "Assists":12,
-                    "steals":3,
-                    "blocks":1,
-                    "slam Dunks":1
-                },
-                "Brook Lopez":{
-                    "Number": 11,
-                    "shoe":17,
-                    "points":17,
-                    "rebounds":19,
-                    "Assists":10,
-                    "steals":3,
-                    "blocks":1,
-                    "slam Dunks":15
-                },
-                "Mason Plumlee":{
-                    "Number": 0,
-                    "shoe":10,
-                    "points":22,
-                    "rebounds":12,
-                    "Assists":12,
-                    "steals":3,
-                    "blocks":8,
-                    "slam Dunks":5
-                }
+let gameObject = {
+    home: {
+        teamName: 'Brooklyn Nets',
+        colors: ['Black', 'White'],
+        players: {
+            'Alan Anderson': {
+                number: '0',
+                shoe: '16',
+                points: '22',
+                rebounds: '12',
+                assists: '12',
+                steals: '3',
+                blocks: '1',
+                slamDunks: '1'
+            },
+            'Reggie Evans': {
+                number: 30,
+                shoe: 14,
+                points: 12,
+                rebounds: 12,
+                assists: 12,
+                steals: 12,
+                blocks: 12,
+                slamDunks: 7
+            },
+            'Brook Lopez': {
+                number: 11,
+                shoe: 17,
+                points: 17,
+                rebounds: 19,
+                assists: 10,
+                steals: 3,
+                blocks: 1,
+                slamDunks: 15
+            },
+            'Mason Plumlee': {
+                number: 1,
+                shoe: 19,
+                points: 26,
+                rebounds: 12,
+                assists: 6,
+                steals: 3,
+                blocks: 8,
+                slamDunks: 5
+            },
+            'Jason Terry': {
+                number: 31,
+                shoe: 15,
+                points: 19,
+                rebounds: 2,
+                assists: 2,
+                steals: 4,
+                blocks: 11,
+                slamDunks: 1
             }
-        },
-        away:{
-            teamName:"Charlotte Hornets",
-            colors: "Turquoise, Purple",
-            players:{
-                "Jeff Adrien":{
-                    "Number": 0,
-                    "shoe":10,
-                    "points":22,
-                    "rebounds":12,
-                    "Assists":12,
-                    "steals":3,
-                    "blocks":1,
-                    "slam Dunks":1
-                },
-                "Bismak Biyombo":{
-                    "Number": 30,
-                    "shoe":10,
-                    "points":22,
-                    "rebounds":12,
-                    "Assists":12,
-                    "steals":3,
-                    "blocks":1,
-                    "slam Dunks":1
-                },
-                "DeSagna Diop":{
-                    "Number": 11,
-                    "shoe":17,
-                    "points":17,
-                    "rebounds":19,
-                    "Assists":10,
-                    "steals":3,
-                    "blocks":1,
-                    "slam Dunks":15
-                },
-                "Ben Gordon":{
-                    "Number": 0,
-                    "shoe":10,
-                    "points":22,
-                    "rebounds":12,
-                    "Assists":12,
-                    "steals":3,
-                    "blocks":8,
-                    "slam Dunks":5
-                }
+        }
+    },
+    away: {
+        teamName: 'Charlotte Hornets',
+        colors: 'Turquise Purple',
+        players: {
+            'Jeff_Adrien': {
+                number: 4,
+                shoe: 18,
+                points: 10,
+                rebounds: 1,
+                assists: 1,
+                steals: 2,
+                blocks: 7,
+                slamDunks: 2
+            },
+            'Bismak Biyombo': {
+                number: 0,
+                shoe: 16,
+                points: 12,
+                rebounds: 4,
+                assists: 7,
+                steals: 7,
+                blocks: 15,
+                slamDunks: 10
+            },
+            'DeSagna Diop': {
+                number: 2,
+                shoe: 14,
+                points: 24,
+                rebounds: 12,
+                assists: 12,
+                steals: 4,
+                blocks: 5,
+                slamDunks: 5
+            },
+            'Ben Gordon': {
+                number: 8,
+                shoe: 15,
+                points: 33,
+                rebounds: 3,
+                assists: 2,
+                steals: 1,
+                blocks: 1,
+                slamDunks: 0
+            },
+            'Brendan Haywood': {
+                number: 3,
+                shoe: 15,
+                points: 6,
+                rebounds: 12,
+                assists: 12,
+                steals: 22,
+                blocks: 5,
+                slamDunks: 12
+            }
+
+        }
+
+    }
+}
+debugger
+
+// - Build a function, `numPointsScored` that takes in an argument of a player's
+
+function numPointsScored(playerInput) {
+    const game = gameObject
+    for (const gameKey in game) {//iterate through game keys home, away
+        const teamObj = game[gameKey]
+        debugger;
+        for (const teamKey in teamObj);
+        const playerObj = teamObj.players
+        debugger
+        for (const playerKey in playerObj) {
+            if (playerKey === playerInput) {
+                return playerObj[playerKey].points
             }
         }
     }
-    return game
 }
-function homeTeamName() {
-    let object = gameObject()
-    return object['home']['teamName']
-  }
-  function numPointsScored(playerName){
-        let game = gameObject()
-        for (let gameKey in game){
-            const teamObj = game[gameKey]
+
+
+console.log(numPointsScored('Brendan Haywood'))
+
+// Build a function, `shoeSize`, that takes in an argument of a player's name and return size
+function shoeSize(playerInput) {
+    const game = gameObject
+    for (const gameKey in game) {//iterate through game keys home, away
+        const teamObj = game[gameKey]
+        for (const teamKey in teamObj) {
             const playerObj = teamObj.players
             for (const playerKey in playerObj) {
-                if (playerKey === playerName) {
-                    return playerObj[playerKey].points
-                    
+                if (playerKey === playerInput) {
+                    return playerObj[playerKey].shoe
                 }
             }
         }
-  }
+    }
 
-  function shoeSize(pName){
-    let game = gameObject()
-    for (let gameKey in game){
+}
+console.log(shoeSize('Brendan Haywood'))
+
+function teamColors(teamName) {
+    const game = gameObject
+    for (const gameKey in game) {
         const teamObj = game[gameKey]
-        const playerObj = teamObj.players
-        for (const playerKey in playerObj) {
-            if (playerKey === pName) {
-                return playerObj[playerKey].shoe                
-            }
+        const team = teamObj.teamName
+        const teamColors = teamObj.colors
+        if (teamName === team) {
+            return teamColors
         }
     }
 }
 
-    function teamColors(nameOfTeam){
-        const game = gameObject()
-        for (const gameKey in game){
-                const teamHomeAway = game[gameKey]
-                    const teamObj = teamHomeAway.teamName
-                    const teamClrs = teamHomeAway.colors
-                            if (nameOfTeam === teamObj){
-                                return teamClrs
-                            }     
+console.log(teamColors('Charlotte Hornets'))
+
+function teamNames() {
+    const game = gameObject
+    const team = []
+    for (const gameKey in game) {
+        const teamObj = game[gameKey]
+        const teams = teamObj.teamName
+        team.push(`teams are ${teams}`)
+    }
+    return team
+}
+console.log(teamNames())
+
+function playerNumbers(name) {
+    const game = gameObject
+    let jerseyNoArray = []
+    for (const key in game) {
+        if (game[key].teamName === name) {
+            for (const player in game[key].players) {
+                jerseyNoArray.push(game[key].players[player].number)
+
+            }
         }
     }
+    return jerseyNoArray
+}
 
-            const teamNames = () => {
-                const game = gameObject();
-                const colors = [];
-                for(const gameKey in game ){
-                    const teamObj = game[gameKey];
-                    const teamName = teamObj.teamName;
-                    colors.push(`The team name is ${teamName}`)
-                }
-                return colors
-              }
-              teamNames();
+console.log(playerNumbers('Charlotte Hornets'))
 
-              const playerNumbers = (name) => {
-                const game = gameObject();
-                const teamPlayerNumbers = [];
-                for(const gameKey in game ){
-                    const teamObj = game[gameKey];
-                    const teamName = teamObj.teamName;
-                    const data = teamObj.players;
-                    if(teamName === name){
-                      for(const key in data){
-                          const number = data[key].number;
-                        teamPlayerNumbers.push(`${number}`)
-                      }
-                    }
-                }
-                return `The jersey numbers for ${name} are [${teamPlayerNumbers}]`;
-              }
-              playerNumbers();
+function playerStats(playerName) {
+    const game = gameObject
+    let playerStatsObject = {}
+    for (let key in game) {
+        for (const player in game[key].players) {
+            if (player === playerName) {
+                playerStatsObject = game[key].players[player]
+            }
+        }
+    }
+    return playerStatsObject
+}
+console.log(playerStats('Ben Gordon'))
 
-              const playerStats = (names) => {
-                const game = gameObject();
-                for(const gameKey in game ){
-                    const teamObj = game[gameKey];
-                    const data = teamObj.players;
-                    for(const key in data){
-                        const player = key;
-                        if( player === names){
-                          return data[key]
-                        }
-                    }
-                }
-              }
-              playerStats();
+// - Then, return that player's number of rebounds
 
-            const bigShoeRebounds = () => {
-                const game = gameObject();
-                for(const gameKey in game){
-                    const teamObj = game[gameKey];
-                    const data = teamObj.players;
-                    
-                    for(const key in data){
-                        console.log(data[key])
-                        const player = key;
-                        const shoeSize = data[key].shoe;           
-                    }
-                }
-              }
-              
-              bigShoeRebounds()
+function bigshoeRebounds() {
+    const game = gameObject
+    let largestShoeSize = 0;
+    let bigShoeRebounds = {}
+    for (let key in game) {
+        for (const player in game[key].players) {
+            if (game[key].players[player].shoe > largestShoeSize) {
+                largestShoeSize = game[key].players[player].shoe;
+                bigShoeRebounds = game[key].players[player];
+            }
+        }
+    }
+    return (` largest ${bigShoeRebounds.rebounds}`)
+}
 
-console.log(numPointsScored("DeSagna Diop"));
-console.log(shoeSize("Jeff Adrien"))
-console.log(teamColors("Brooklyn Nets"))
-console.log(playNumbers("Charlotte Hornets"))
+console.log(bigshoeRebounds())
+
+
+//  Which player has the most points? Call the function `mostPointsScored`.
+
+function mostPointsScored() {
+ let playerWithHighestPoints={}
+ let highestPoints =0
+ for (const key in gameObject) {
+    for (const player in gameObject[key].players) {
+      if (gameObject[key].players[player].points > highestPoints) {
+        highestPoints = gameObject[key].players[player].points;
+        playerWithHighestPoints = {};
+        playerWithHighestPoints[player] = gameObject[key].players[player];
+      }
+    }
+  }
+
+  return playerWithHighestPoints;
+};
+
+console.log(mostPointsScored())
+
+// Which team has the most points? Call the function `winningTeam`.
+
+function winningTeam() {
+    let homeTeamPoints = 0;
+    let awayTeamPoints = 0;
+    for (const key in gameObject) {
+      if (key === "away") {
+        for (const player in gameObject[key].players) {
+            awayTeamPoints += gameObject[key].players[player].points;
+
+        }
+      } else if (key === "home") {
+        for (const player in gameObject[key].players) {
+            homeTeamPoints += gameObject[key].players[player].points;
+
+        }
+      }
+    }
+  
+    return `
+    Winning Team - ${
+      homeTeamPoints > awayTeamPoints
+        ? gameObject["home"].teamName
+        : gameObject["away"].teamName
+    }
+    Points - ${homeTeamPoints > awayTeamPoints ? homeTeamPoints : awayTeamPoints}
+    `;
+  };
+console.log(winningTeam())
+
+
+// Which player has the longest name? Call the function `playerWithLongestName`.
+
+function playerWithLongestName(){
+    let playerName = "";
+    let sizeOfLongestName = 0;
+    for (const key in gameObject) {
+      for (const player in gameObject[key].players) {
+        if (player.length > sizeOfLongestName) {
+          sizeOfLongestName = player.length;
+          playerName = player;
+        }
+      }
+    }
+  
+    return playerName;
+  };
+
+console.log(playerWithLongestName())
+// Write a function that returns true if the player with the longest name had the most steals
+function doesLongNameStealATon  (){
+    const nameOfPlayerWithLongestName = playerWithLongestName();
+    let mostSteals = 0;
+    let playerWithMostSteals = "";
+    for (const key in gameObject) {
+      for (const player in gameObject[key].players) {
+        if (gameObject[key].players[player].steals > mostSteals) {
+          mostSteals = gameObject[key].players[player].steals;
+          playerWithMostSteals = player;
+        }
+      }
+    }
+    return playerWithMostSteals === nameOfPlayerWithLongestName;
+  };
+  
+  console.log(doesLongNameStealATon());
